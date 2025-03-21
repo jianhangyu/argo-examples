@@ -12,8 +12,8 @@ image:
   tag: latest
 
 
-test:
-  default: fallback-default-vaule
+replicas: 4
 
-INGRESS_HOSTNAME_SUFFIX: cloud.kyriba.com
-PLATFORM_INSTANCE_ID: us4-pre-a
+configmap:
+  data:
+    CUSTOM_HEADER: 'This is on the PROD environment!'
