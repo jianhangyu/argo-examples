@@ -4,8 +4,6 @@ metadata:
   name: {{ .Values.appName }}
   labels:
     app: {{ .Values.appName }}
-    ingressNameOverride: '{{ include "ingressSuffixOverride" . }}'
-    clusterOverride: '{{ include "clusterDestinationOverride" . }}'
 spec:
   replicas: {{ .Values.replicas }}
   selector:
