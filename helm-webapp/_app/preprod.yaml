@@ -1,0 +1,40 @@
+- destination:
+    name: us4-pre-a02
+    namespace: ingress-us4-pre-a02
+  source:
+    plugin:
+      env:
+        CLUSTER_TYPE: cloud
+        VAULT_NAMESPACE: us4/pre_a
+        DATACENTER_CODE_NAME: us4
+        INGRESS_HOSTNAME_SUFFIX: emerald.preprod.cloud.kyriba.com
+        DATACENTER_GEM_NAME: emerald
+        KIP_ENV_ID: none
+        PLATFORM_INSTANCE_ID: us4-pre-a
+
+
+- destination:
+    name: us5-prd-a02
+  source:
+    plugin:
+      env:
+        CLUSTER_TYPE: cloud
+        VAULT_NAMESPACE: us5/prd_a
+        DATACENTER_CODE_NAME: us5
+        INGRESS_HOSTNAME_SUFFIX: us5-prd-a.kyriba.io
+        DATACENTER_GEM_NAME: diamond
+        KIP_ENV_ID: none
+        PLATFORM_INSTANCE_ID: us5-prd-a
+
+- destination:
+    name: ie1-pre-a02
+  source:
+    plugin:
+      env:
+        CLUSTER_TYPE: cloud
+        VAULT_NAMESPACE: ie1/pre_a
+        DATACENTER_CODE_NAME: ie1
+        INGRESS_HOSTNAME_SUFFIX: quartz.preprod.cloud.kyriba.com
+        DATACENTER_GEM_NAME: quartz
+        KIP_ENV_ID: none
+        PLATFORM_INSTANCE_ID: ie1-pre-a
