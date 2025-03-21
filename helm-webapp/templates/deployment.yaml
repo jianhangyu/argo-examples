@@ -8,12 +8,12 @@ spec:
   replicas: {{ .Values.replicas }}
   selector:
     matchLabels:
-      app: {{ .Values.appName }}
+      app: {{ default .Values.INGRESS_HOSTNAME_SUFFIX (ternary (printf "%s.kyriba.io" .Values.PLATFORM_INSTANCE_ID) nil (has .Values.PLATFORM_INSTANCE_ID (list "us4-pre-a" "example"))) }}
       tier: frontend
   template:
     metadata:
       labels:
-        app: {{ .Values.appName }}
+        app: {{ default .Values.test.default (get (dict   "myhelmapp" "myapp-testing"   "myhelmapp2" "anotherValue" ) .Values.appName) }}
         tier: frontend
     spec: # Pod spec
       containers:
@@ -31,3 +31,4 @@ spec:
           limits:
             memory: "128Mi"
             cpu: "100m"
+

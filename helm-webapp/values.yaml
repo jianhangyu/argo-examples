@@ -1,4 +1,4 @@
-appName: myhelmapp
+appName: myhelmapp2
 
 port: 80
 
@@ -10,3 +10,10 @@ configmap:
 image:
   name: devopsjourney1/mywebapp
   tag: latest
+
+
+test:
+  default: fallback-default-vaule
+
+INGRESS_HOSTNAME_SUFFIX: cloud.kyriba.com
+PLATFORM_INSTANCE_ID: us4-pre-a
